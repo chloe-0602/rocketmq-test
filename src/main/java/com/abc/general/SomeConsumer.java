@@ -31,6 +31,7 @@ public class SomeConsumer {
 
             // 一旦broker中有了其订阅的消息就会触发该方法的执行，
             // 其返回值为当前consumer消费的状态
+            // 这个ConsumeConcurrentlyStatus是MQ要用的
             @Override
             public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs,
                                                             ConsumeConcurrentlyContext context) {

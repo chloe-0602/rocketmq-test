@@ -24,7 +24,7 @@ public class SyncProducer {
         producer.setSendMsgTimeout(5000);
 
         producer.start();
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1; i++) {
 
             Message message = new Message("someTopic", "someTag", ("Hi, " + i).getBytes());
             message.setKeys("key-" + i);

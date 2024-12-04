@@ -23,7 +23,7 @@ public class OrderedProducer {
             Integer orderId = i;
             byte[] body = ("Hi," + i).getBytes();
             Message msg = new Message("TopicA", "TagA", body);
-            // 将orderId作为消息key
+            // 将orderId作为消息key，为了避免在选择算法出现重复的，这里将orderId传给key
             msg.setKeys(orderId.toString());
             // send()的第三个参数值会传递给选择器的select()的第三个参数
             // 该send()为同步发送

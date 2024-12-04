@@ -12,7 +12,7 @@ public class OnewayProducer {
         for (int i = 0; i < 10; i++) {
             byte[] body = ("Hi," + i).getBytes();
             Message msg = new Message("single", "someTag", body);
-            // 单向发送
+            // 单向发送 ： 仅发送消息，不等待 不处理MQ的ACK；而且MQ其实也不会返回ACK
             producer.sendOneway(msg);
         }
         producer.shutdown();
